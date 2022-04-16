@@ -1,7 +1,7 @@
 <h2>{{post.title}}</h2>
 {{post.content}}
 {{post.user.username}}
-{{post.createdAt}}
+{{format_date post.createdAt}}
 <h3>Comments below:</h3>
 
 <ol class="post-list">
