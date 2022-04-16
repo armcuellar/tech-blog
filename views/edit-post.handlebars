@@ -1,15 +1,20 @@
-<form class="createPost-form">
+<form class="updatePost-form">
     <div>
-        <label for="postTitle">Title of Post:</label>
-        <input type="text" id="postTitle" />
+        <label for="updatedTitle">Title of Post:</label>
+        <input type="text" id="updatedTitle" value="{{post.title}}" />
     </div>
     <div>
         <p>Content</p>
 
-        <textarea id="content-textarea" name="content-textarea"></textarea>
+        <textarea id="updated-textarea" name="updated-textarea">{{post.content}}</textarea>
 
     </div>
     <div>
-        <button type="submit">Submit Blog Post</button>
+        <button type="submit">Update Blog Post</button>
     </div>
 </form>
+<div>
+    <button id="deletePost">Delete Blog Post</button>
+</div>
+
+<script src="/javascript/editPost.js"></script>

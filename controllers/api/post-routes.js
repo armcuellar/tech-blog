@@ -7,11 +7,6 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
   console.log('======================');
   Post.findAll({
-    attributes: [
-      'id',
-      'title',
-      'created_at'
-    ],
     include: [
       {
         model: Comment,
@@ -88,6 +83,7 @@ router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
       title: req.body.title,
+      content: req.body.content
     },
     {
       where: {
