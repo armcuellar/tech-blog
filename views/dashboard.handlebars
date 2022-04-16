@@ -1,0 +1,10 @@
+<h1>Welcome {{user.username}} this is your Dashboard!</h1>
+
+<h2>Here are your blog posts:</h2>
+<ol class="post-list">
+    {{#each user.posts as |post|}}
+    {{> blog post}}
+    {{/each}}
+</ol>
+
+<button id="addBlog" class="btn-no-style">Add a New Blog Post</button>

@@ -1,0 +1,26 @@
+<h2>{{post.title}}</h2>
+{{post.content}}
+{{post.user.username}}
+{{post.createdAt}}
+<h3>Comments below:</h3>
+
+<ol class="post-list">
+    {{#each post.comments as |post|}}
+    {{> comments post}}
+    {{/each}}
+</ol>
+
+{{#if loggedIn}}
+<form class="comment-form">
+    <h2>add comment</h2>
+    <textarea id="comment-textarea" name="comment-textarea">
+    </textarea>
+    <div>
+        <button type="submit">submit comment</button>
+    </div>
+</form>
+{{else}}
+<p><a href="/login">Login</a> to add comment</p>
+{{/if}}
+
+<script src="/javascript/comment.js"></script>

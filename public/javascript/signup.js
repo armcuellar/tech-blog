@@ -21,7 +21,11 @@ async function signupFormHandler(event) {
         }
     }
 }
+async function switchToLogin(event) {
+    document.location.replace('/login');
+}
 
 
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+document.querySelector('#login').addEventListener('click', switchToLogin);
 

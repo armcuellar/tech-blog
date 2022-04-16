@@ -47,12 +47,6 @@ router.get('/post/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: [
-            'id',
-            'post_url',
-            'title',
-            'created_at',
-        ],
         include: [
             {
                 model: Comment,
@@ -87,6 +81,48 @@ router.get('/post/:id', (req, res) => {
         });
 });
 
+
+router.get('/dashboard', (req, res) => {
+    if (!req.session.loggedIn) {
+        res.redirect('/login');
+        return;
+    }
+    User.findOne({
+        attributes: { exclude: ['password'] },
+        where: {
+            id: req.session.user_id
+        },
+        include: [
+            {
+                model: Post,
+                attributes: ['id', 'title', 'content', 'created_at'],
+                include: {
+                    model: Comment
+                }
+
+            },
+        ]
+    })
+        .then(dbPostData => {
+            if (!dbPostData) {
+                res.status(404).json({ message: 'No user found with this id' });
+                return;
+            }
+
+            const user = dbPostData.get({ plain: true });
+
+            res.render('dashboard', {
+                user,
+                loggedIn: req.session.loggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+
+
+});
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
