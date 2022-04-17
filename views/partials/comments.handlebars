@@ -1,6 +1,6 @@
-<div class="comments">
-    {{comment_text}}
-    created by: {{user.username}}
-    created on: {{format_date created_at}}
-
+<div class="card-header">
+    <p class="card-text fs-5">{{comment_text}}</p>
+    <p class="text-muted">
+        Created by: {{user.username}} on {{format_date created_at}}
+    </p>
 </div>

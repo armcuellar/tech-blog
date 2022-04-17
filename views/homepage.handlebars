@@ -1,6 +1,6 @@
-<div>You are on the homepage</div>
-<ol class="post-list">
+<h2>You are on the homepage</h2>
+<div class="card">
     {{#each posts as |post|}}
-    <li>{{> post-info post}}</li>
+    {{> post-info post}}
     {{/each}}
-</ol>
+</div>

@@ -1,0 +1,9 @@
+.btn {
+    margin: 4px
+}
+.navbar {
+    justify-content: space-around;
+}
+.update {
+    background-color: rgb(228, 228, 228);
+}

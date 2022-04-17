@@ -1,20 +1,20 @@
-<form class="updatePost-form">
-    <div>
-        <label for="updatedTitle">Title of Post:</label>
-        <input type="text" id="updatedTitle" value="{{post.title}}" />
+<form class="updatePost-form border">
+    <h2>Update Post</h2>
+    <div class="m-3">
+        <label class="form-label" for="updatedTitle">Title of Post:</label>
+        <input class="form-control update" type="text" id="updatedTitle" value="{{post.title}}" />
+    </div>
+    <div class="m-3">
+        <label class="form-label" for="updated-textarea">Content:</label>
+        <textarea class="form-control update" id="updated-textarea" name="updated-textarea">{{post.content}}</textarea>
+
     </div>
     <div>
-        <p>Content</p>
-
-        <textarea id="updated-textarea" name="updated-textarea">{{post.content}}</textarea>
-
-    </div>
-    <div>
-        <button type="submit">Update Blog Post</button>
+        <button class="btn btn-primary" type="submit">Update Blog Post</button>
     </div>
 </form>
 <div>
-    <button id="deletePost">Delete Blog Post</button>
+    <button class="btn btn-primary" id="deletePost">Delete Blog Post</button>
 </div>
 
 <script src="/javascript/editPost.js"></script>

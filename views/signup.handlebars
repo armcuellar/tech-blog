@@ -1,21 +1,21 @@
-<form class="signup-form">
+<form class="signup-form border">
     <div>
         <h2>Sign Up</h2>
     </div>
-    <div>
-        <label for="username-signup">Username:</label>
-        <input type="text" id="username-signup" />
+    <div class="mb-3">
+        <label class="form-label" for="username-signup">Username:</label>
+        <input class="form-control" type="text" id="username-signup" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="password-signup">Password:</label>
+        <input class="form-control" type="password" id="password-signup" />
     </div>
     <div>
-        <label for="password-signup">Password:</label>
-        <input type="password" id="password-signup" />
-    </div>
-    <div>
-        <button type="submit">signup</button>
+        <button class="btn btn-primary btn-lg" type="submit">Signup</button>
     </div>
 </form>
 <div>
-    <button id="login" class="btn-no-style"> Login instead</button>
+    <button id="login" class="btn btn-secondary btn-sm"> Login instead</button>
 </div>
 
 <script src="/javascript/signup.js"></script>

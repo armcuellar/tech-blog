@@ -1,16 +1,15 @@
-<form class="createPost-form">
-    <div>
-        <label for="postTitle">Title of Post:</label>
-        <input type="text" id="postTitle" />
+<form class="createPost-form border">
+    <div class="m-3">
+        <label class="form-label" for="postTitle">Title of Post:</label>
+        <input class="form-control" type="text" id="postTitle" />
+    </div>
+    <div class="m-3">
+        <label class="form-label" for="content-textarea">Content: </label>
+        <textarea class="form-control" id="content-textarea" name="content-textarea"></textarea>
+
     </div>
     <div>
-        <p>Content</p>
-
-        <textarea id="content-textarea" name="content-textarea"></textarea>
-
-    </div>
-    <div>
-        <button type="submit">Submit Blog Post</button>
+        <button class="btn btn-primary" type="submit">Submit Blog Post</button>
     </div>
 </form>
 

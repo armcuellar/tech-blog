@@ -1,14 +1,12 @@
-<a href="/comment/{{id}}">
-    <div class="title">
-        <span>{{title}}</span>
-    </div>
+<div class="card-header d-flex justify-content-between">
+    <a href="/comment/{{id}}">{{title}}</a>
     <div>
         Posted by
         {{user.username}}
         on
         {{format_date created_at}}
     </div>
-    <div>
-        {{content}}
-    </div>
-</a>
+</div>
+<div class="card-body">
+    {{content}}
+</div>
